@@ -117,8 +117,7 @@ section{
     width: 100vw;
     grid-template-columns: 19% 19% 19% 19% 19%;
     align-items: center;
-    justify-content: center;
-    padding: 10px 0px 10px 0px;
+    padding: 10px;
     justify-content: center;
 }
 
@@ -128,7 +127,6 @@ section div{
     height: 290px;
     width: 200px;
     overflow: hidden;
-    margin: 5px;
 }
 
 section div img{
