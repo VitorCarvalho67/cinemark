@@ -1,0 +1,120 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 10vh 50vh auto 20vh;
+    grid-template-areas: "top""page""cards""footer";
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.774);
+}
+
+nav{
+    position: relative;
+    grid-area: "top";
+    display: grid;
+    grid-template-columns: 20vw auto;
+    grid-template-areas: "img btn";
+    border-bottom: solid rgb(226, 36, 36) 2px; 
+}
+
+
+.img-box-nav{
+    height: 100%;
+    grid-area: "img";
+    align-items: center;
+}
+.btn-box-nav{
+    position: relative;
+    height: 100%;
+    grid-area: "btn";
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    right: 30px;
+}
+.btn-box-nav a{
+    position: relative;
+    text-decoration: none;
+    color: rgb(255, 0, 0);
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:800;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 10px;
+    
+    margin: 5px;
+}
+
+a::after{
+    display: flex;
+    flex-direction: column;
+    content: '';
+    height: 2px;
+    background-color: rgb(226, 36, 36);
+    width: 0px;
+}
+
+.btn-box-nav a:hover::after{
+    animation: btn .6s ease-out;
+    transform-origin: left;
+    width: 100%;
+}
+
+@keyframes btn{
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 100%;
+   }
+
+}
+
+
+footer{
+    grid-area: "footer";
+    background-color: rgb(39, 34, 34);
+    display: flex; 
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between; 
+    user-select: none;
+}
+
+footer ul li { 
+    margin: 10px 0px 0px 0px; 
+} 
+
+#ds { 
+    margin: 0px 0px 0px 40px; 
+} 
+
+#social { 
+    margin: 0px 40px 0px 0px; 
+} 
+
+#social img { 
+    width: 15px; color: var(--fontColor); 
+} 
+
+svg { 
+    fill: white; 
+    width: 18px; 
+    height: 18px; 
+    margin: 0px 5px 0px 0px; 
+} 
+
+#social li a, footer li { 
+    display: flex; 
+    align-items: center; 
+    letter-spacing: 1px; 
+    font-family: InterBold; 
+    cursor: pointer; 
+    color: white; 
+} 
