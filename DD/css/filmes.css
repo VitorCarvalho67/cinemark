@@ -6,8 +6,8 @@
 
 body{
     display: grid;
-    grid-template-rows: 10vh 50vh auto 20vh;
-    grid-template-areas: "top""page""cards""footer";
+    grid-template-rows: 10vh 90vh 20vh;
+    grid-template-areas: "top""page""footer";
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.774);
 }
@@ -76,6 +76,13 @@ a::after{
 
 }
 
+main{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 footer{
     grid-area: "footer";

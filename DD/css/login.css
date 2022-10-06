@@ -6,8 +6,8 @@
 
 body{
     display: grid;
-    grid-template-rows: 10vh 50vh auto 20vh;
-    grid-template-areas: "top""page""cards""footer";
+    grid-template-rows: 10vh 90vh 20vh;
+    grid-template-areas: "top""page""footer";
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.774);
 
@@ -87,65 +87,133 @@ main{
     grid-area: "page";
     background-color: rgb(78, 74, 74);
     display: flex;
+    flex-direction: row;
     align-items: center;
+    position: relative;
 }
 
-main img{
-    object-fit: cover;
+main div{
+    width: 50%;
     height: 100%;
-    width: 100%;
-}
-
-main div h1{
-    position: absolute;
-    text-align: center;
-    color: #fff;
-    width: 100%;
-    margin: 5px;
-    backdrop-filter: blur(20px);
-    letter-spacing: calc(1vw + 3px);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-section{
     position: relative;
-    grid-area: "cards";
-    display: grid;
-    grid-template-columns: 19% 19% 19% 19% 19%;
-    align-items: center;
-    padding: 10px;
-    justify-content: center;
-}
-
-section div{
-    position: relative;
-    background-color: #fff;
-    border-radius: 10px;
-    height: 290px;
-    width: 200px;
     overflow: hidden;
-    margin: 5px;
 }
 
-section div img{
-    object-fit: cover;
+.img-box img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
-section div img:hover{
-    animation: imgh .6s;
-    transform: scale(1.1);
+.form__wrapper {
+    position: relative;
+    height: 100%;
+    background-color: #141313;
 }
 
-@keyframes imgh{
-    0%{
-        transform: scale(1);
+.input {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin: 20px;
+    overflow: hidden;
+
+}
+
+.input>input {
+    padding: 8px;
+    z-index: 101;
+    background-color: transparent;
+    color: #7e0000;
+}
+
+label {
+    position: absolute;
+    user-select: none;
+    cursor: text;
+    height: 30px;
+    padding: 10px;
+    margin-left: 5px;
+    font-size: 15px;
+    color: white;
+    z-index: 000;
+    overflow: hidden;
+}
+
+.input>p {
+    z-index: 101;
+}
+
+legend {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 5px;
+    color: #fff;
+}
+
+
+input, input:focus {
+    outline: none;
+    border: solid .1px rgba(255, 255, 255, 0.404);
+}
+
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0 30px white inset;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.63) !important;
+}
+
+input:valid~label, input:focus~label {
+    animation: readjust .3s;
+    top: -20px;
+    background-color:  transparent;
+    z-index: 101;
+}
+
+@keyframes readjust {
+    0% {
+        top: 0px;
     }
 
-    100%{
-        transform: scale(1.1);
+    100% {
+        top: -20px;
     }
+}
+
+form {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 360px;
+}
+
+fieldset {
+    
+    margin: 5px;
+    border-width: 0.1px;
+    border-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#submit {
+    height: 35px;
+    width: 150px;
+    margin: 0 auto;
+    font-size: 12px;
+    cursor: pointer;
+    color: #fff;
+    overflow: hidden;
+}
+
+#submit:hover {
+    background-color: #c91010;
 }
 
 footer{
@@ -190,38 +258,19 @@ svg {
     color: rgb(196, 186, 186); 
 } 
 
-@media screen and (max-width: 1100px){
-    section{
-        grid-template-columns: 25% 25% 25% 25%;
-    }
-}
-@media screen and (max-width: 814px){
-    body{
-        grid-template-rows: 10vh 60vh auto 20vh;
-    }
-    section{
-        grid-template-columns: 31% 31% 31%;
-    }
-    section div {
-        transform: scale(0.8);
-        left: -20px;
+@media screen and (max-width: 900px) {
+    .img-box {
+        position: relative;
+        width: 0px;
+        height: 84vh;
+        background-color: rgb(0, 0, 0);
+        overflow: hidden;
     }
 
-    .img-box-nav img{
-        width: 100%;
-        height: 30%;
-    }
-}
-
-@media screen and (max-width: 600px){
-    body{
-        grid-template-rows: 10vh 60vh auto 15vh;
-    }
-    section{
-        grid-template-columns: 40% 40%;       
-    }
-    nav{
-        grid-template-columns: 30vw auto;
-        grid-template-areas: "img btn";
+    .form__wrapper {
+        position: relative;
+        width: 100vw;
+        height: 100%;
+        background-color: #141313e5;
     }
 }

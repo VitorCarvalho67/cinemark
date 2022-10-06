@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CINEMARK</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <nav>
@@ -14,37 +14,38 @@
         </div>
         <div class="btn-box-nav">
             <a href="filmes.html">Filmes</a>
-            <a href="login.php">Guichê</a>
+            <a href="login.html">Guichê</a>
             <a href="index.html">Home</a>
         </div>
     </nav>
-
     <main>
-        <div>
-            <h1>oi</h1>
+        <div class="img-box">
+            <img src="img/maxresdefault.jpg" alt="">
         </div>
-        <img src="img/maxresdefault.jpg">
+        <div class="form__wrapper">
+            <form action="testLogin.php" method="POST">
+                <fieldset>
+                    <legend>
+                        Login
+                    </legend>
+                    <div class="input">
+                        <input type="text" name="email"  required>
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="input">
+                        <input type="password" name="senha" required>
+                        <p id="show">
+                            <ion-icon name="eye-outline"></ion-icon>
+                        </p>
+                        <label for="senha">Senha</label>
+                    </div>
+                    <div class="input">
+                        <input type="submit" id="submit" name="submit" value="Enviar">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </main>
-
-    <section>
-        <div>
-            <img src="img/img1-cards.jpg" alt="">
-        </div>
-        <div>
-            <img src="img/img2-cards.jpg" alt="">
-        </div>
-        <div>
-            <img src="img/img3-cards.jpg" alt="">
-        </div>
-        <div>
-            <img src="https://br.web.img3.acsta.net/c_310_420/pictures/22/08/03/22/02/1576547.jpg" alt="">
-        </div>
-        <div>
-            <img src="img/img5-cards.jpg" alt="">
-        </div>
-        
-    </section>
- 
     <footer>
         <ul id="ds">
             <li id="devs">Patrocínios</li>
@@ -73,5 +74,4 @@
         </ul>
     </footer>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </html>
